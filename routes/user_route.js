@@ -23,7 +23,7 @@ passport.use(
     {
       clientID: process.env.googleclientid,
       clientSecret: process.env.googlesecret,
-      callbackURL: 'http://localhost:8080/user/auth/google/callback',
+      callbackURL: 'https://legit-lawyer.onrender.com/user/auth/google/callback',
       profileFields: ['id', 'displayName', 'picture', 'email'],
     },
     function (accessToken, refreshToken, profile, done) {
