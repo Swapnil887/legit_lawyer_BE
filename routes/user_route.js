@@ -73,7 +73,7 @@ userrouter.get("/newpasswordreset/:email", async (req, res) => {
   // Encode the serialized JSON as a URL-safe string
   const encodedData = encodeURIComponent(userData);
 
-  res.redirect(`http://127.0.0.1:5500/frontend/confirmpassword.html?user=${encodedData}`);
+  res.redirect(`https://legit-lawyer-fe.vercel.app/confirmpassword.html?user=${encodedData}`);
 })
 
 userrouter.post("/confirmpassword", async (req, res) => {
@@ -101,7 +101,7 @@ userrouter.get('/status/:email', async (req, res) => {
   // Encode the serialized JSON as a URL-safe string
   const encodedData = encodeURIComponent(userData);
 
-  res.redirect(`http://127.0.0.1:5501/frontend/login.html?user=${encodedData}`)
+  res.redirect(`https://legit-lawyer-fe.vercel.app/login.html?user=${encodedData}`)
 });
 
 userrouter.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
@@ -119,7 +119,7 @@ userrouter.get(
       // Encode the serialized JSON as a URL-safe string
       const encodedData = encodeURIComponent(userData);
 
-      res.redirect(`http://127.0.0.1:5501/frontend/index.html?user=${encodedData}`);
+      res.redirect(`https://legit-lawyer-fe.vercel.app/index.html?user=${encodedData}`);
 
     } else {
       let obj = {
@@ -130,7 +130,7 @@ userrouter.get(
       let userfromdb = await outhuser.findOne({ email })
       const userData = JSON.stringify(userfromdb);
       const encodedData = encodeURIComponent(userData);
-      res.redirect(`http://127.0.0.1:5501/frontend/index.html?user=${encodedData}`);
+      res.redirect(`https://legit-lawyer-fe.vercel.app/index.html?user=${encodedData}`);
     }
   }
 );
